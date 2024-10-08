@@ -33,9 +33,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 0;
 }
 .navbar .wrap {
-  padding: 0 140px;
+  padding: 0 10%;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
@@ -53,6 +54,8 @@ body {
   width: 218px;
   vertical-align: middle;
   border-style: none;
+  max-width: 100%;
+  height: auto;
 }
 .navbar .wrap .collapse {
   display: flex;
@@ -63,6 +66,7 @@ body {
 }
 .navbar .wrap .collapse .navbar-nav {
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
@@ -75,8 +79,10 @@ body {
   padding: 0 18px;
 }
 .navbar .wrap .collapse ul li .nav-link {
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  line-height: 1.5;
+}
+.navbar .wrap .collapse ul li .nav-link .head_label {
+  margin-top: 0;
 }
 .navbar .wrap a {
   background-color: transparent;
@@ -91,6 +97,99 @@ body {
   z-index: 1030;
 }
 
+@media (max-width: 992px) {
+  .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  .navbar-collapse {
+    flex-grow: 1;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center; /* Center align items */
+  }
+  .wrap {
+    padding: 0 20px; /* Adjust padding for smaller screens */
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+  .wrap {
+    padding: 0 10px; /* Further reduce padding */
+  }
+  .navbar-brand img {
+    width: 150px; /* Reduce logo size on small screens */
+  }
+}
+.bubble-container {
+  position: fixed; /* Fixed position to stay in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Send the bubbles behind the content */
+  overflow: hidden;
+  background-color: transparent;
+}
+.bubble-container .bubble {
+  position: absolute;
+  bottom: -100px;
+  background-color: rgba(173, 216, 230, 0.7); /* Light blue translucent color */
+  border-radius: 50%;
+  animation: floatUp 10s infinite ease-in-out, resizeBubble 6s infinite ease-in-out;
+  opacity: 0.8;
+}
+.bubble-container .bubble1 {
+  width: 100px;
+  height: 100px;
+  left: 20%;
+  animation-delay: 1s;
+}
+.bubble-container .bubble2 {
+  width: 80px;
+  height: 80px;
+  left: 50%;
+  animation-delay: 2s;
+}
+.bubble-container .bubble3 {
+  width: 120px;
+  height: 120px;
+  left: 70%;
+  animation-delay: 3s;
+}
+.bubble-container .bubble4 {
+  width: 90px;
+  height: 90px;
+  left: 40%;
+  animation-delay: 4s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-300px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+}
+/* Bubble Resizing Animation */
+@keyframes resizeBubble {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
 .modal {
   display: none;
   position: fixed;
@@ -144,9 +243,16 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    margin: 20% auto;
+  }
+}
 .banner {
   position: relative;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 .banner .BannerContainer {
   min-height: 77vh;
@@ -165,6 +271,16 @@ body {
 .banner .BannerContainer h1 span {
   color: #f89924;
 }
+@media (max-width: 768px) {
+  .banner .BannerContainer h1 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .banner .BannerContainer h1 {
+    font-size: 40px;
+  }
+}
 .banner .BannerContainer p {
   text-align: center;
   font-weight: 400;
@@ -172,19 +288,75 @@ body {
   font-size: 1.1rem;
   line-height: 1.7;
 }
+@media (max-width: 768px) {
+  .banner .BannerContainer p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .banner .BannerContainer p {
+    font-size: 0.9rem;
+  }
+}
 .banner .BannerContainer form {
   margin-top: 25px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .banner .BannerContainer form input {
-  padding: 20px;
-  padding-right: 300px;
-  border-radius: 15px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px 0 0 15px;
   border: 1px solid #ccc;
+  box-shadow: 5px 12px 15px -8px rgba(0, 0, 0, 0.2196078431);
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .banner .BannerContainer form input {
+    padding-right: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .banner .BannerContainer form input {
+    padding-right: 30px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
 }
 .banner .BannerContainer form button {
-  border-radius: 25px;
-  padding: 20px 30px;
+  background-color: #f89924;
+  padding: 15px 30px;
+  color: white;
+  border: none;
+  border-radius: 0 15px 15px 0;
+  box-shadow: 5px 12px 15px -8px rgba(0, 0, 0, 0.2196078431);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 480px) {
+  .banner .BannerContainer form button {
+    border-radius: 15px;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+.banner .BannerContainer form button:hover {
+  background-color: #f79925;
+}
+@media (max-width: 768px) {
+  .banner .BannerContainer {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .banner .BannerContainer {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .secondPage {
@@ -205,25 +377,88 @@ body {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  max-width: 100%;
+  height: auto;
 }
 .secondPage .graphsYoutube .container .VideoPlayButton {
   background-color: red;
-  width: 50px;
-  height: 50px;
+  width: 80px;
+  height: 80px;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  animation: pulse 2s infinite;
+}
+.secondPage .graphsYoutube .container .VideoPlayButton::before {
+  content: "";
+  width: 21px;
+  height: 26px;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  position: relative;
+  left: 5px; /* Adjust to center the triangle inside the circle */
+}
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .ChooseYourIndustry {
+  padding-top: 100px;
   width: 100%;
+  padding: 0;
 }
 .ChooseYourIndustry .container {
-  margin-left: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+.ChooseYourIndustry .container .cards {
+  display: flex;
+  justify-content: space-between; /* To make sure the cards distribute evenly */
+  overflow: hidden;
+  gap: 50px;
+}
+.ChooseYourIndustry .container .cards .card {
+  flex: 1 1 auto; /* Make sure the cards scale with the container */
+  padding: 15px; /* Add padding inside the cards */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for layered effect */
+  position: relative;
 }
 .ChooseYourIndustry .container .cards .card img {
-  background-color: aqua;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+.ChooseYourIndustry .container .cards .card .card-body {
+  text-align: center;
+  color: white;
+  padding: 10px 0;
+}
+.ChooseYourIndustry .container .cards .card hr {
+  width: 50%; /* Make the hr thinner */
+  height: 3px; /* Set thickness of the hr */
+  background-color: white; /* Set color of hr */
+  border: none; /* Remove default border */
+  margin: 10px auto;
 }
 .ChooseYourIndustry .container .textContainer {
   margin-right: 0;
@@ -240,6 +475,10 @@ body {
 }
 .ChooseYourIndustry .buttonContainer .btn {
   border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 18px;
+  width: auto;
+  color: white;
 }
 
 .WhatWeDo {
@@ -268,6 +507,8 @@ body {
   height: auto; /* Maintain the aspect ratio */
   margin: 0 auto; /* Center the images */
   border-radius: 25px;
+  max-width: 100%;
+  height: auto;
 }
 .WhatWeDo .skypeAndWhatsapp .social_button {
   margin-top: 25px;
@@ -298,6 +539,8 @@ body {
 .WhatWeDo .skypeAndWhatsapp .social_button .skype_btn img {
   width: 100%;
   height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 .WhatWeDo .skypeAndWhatsapp .social_button .whats_app_btn {
   display: flex;
@@ -347,8 +590,8 @@ body {
 }
 .ClientThik .client-carousel .content .client-photo-wrapper {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 300px;
+  height: 300px;
   margin: 0 auto;
 }
 .ClientThik .client-carousel .content .client-photo-wrapper .testi_client {
@@ -362,21 +605,23 @@ body {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 30px;
-  height: 30px;
+  width: 90px;
+  height: 90px;
 }
 .ClientThik .client-carousel .content p {
-  font-size: 16px;
+  margin: 50px;
+  font-size: 19px;
   line-height: 1.6;
 }
 .ClientThik .client-carousel .content h4 {
   margin-top: 10px;
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
 }
 .ClientThik .client-carousel .content h6 {
-  font-size: 14px;
+  font-size: 18px;
   color: #555;
+  margin-bottom: 50px;
 }
 
 .clientLogo {
@@ -401,9 +646,14 @@ body {
 }
 .clientLogo .container .swiper-container .swiper-wrapper .swiper-slide img {
   max-width: 100px;
+  max-width: 100%;
+  height: auto;
 }
 
 .letstalk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }
 .letstalk .container {
@@ -425,8 +675,6 @@ body {
   padding: 20px;
 }
 .letstalk .container .form .row {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
@@ -434,7 +682,7 @@ body {
   width: 100%;
   padding: 10px;
 }
-@media (min-width: 68px) {
+@media (min-width: 768px) {
   .letstalk .container .form .row .col {
     width: 48%;
   }
@@ -447,17 +695,17 @@ body {
   width: 20%;
   padding: 15px;
   font-size: 1rem;
+  color: #fff;
+  background-color: #333;
 }
-.letstalk .container .button {
-  margin-top: 2rem;
-  text-align: center;
+.letstalk .container button {
+  background-color: #f79925;
   padding: 15px 30px;
   font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
-  background-color: #f79925;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
 }
 
@@ -479,12 +727,46 @@ footer .container .firstColume {
 footer .container .firstColume .logoImage img {
   width: 218px;
   height: 50px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+}
+footer .container .firstColume h5 {
+  font-size: 1rem;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+footer .container .firstColume h6 {
+  color: rgba(0, 0, 0, 0.5);
 }
 footer .container .SecondColume h3 {
   margin-top: 20px;
 }
-footer .container .SecondColume p {
+footer .container .SecondColume .linklight p {
   margin: 10px 0;
+}
+footer .container .SecondColume .linklight p a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+footer .container .SecondColume .linklight p a:hover {
+  color: #f79925;
+}
+footer .container .ThridColume h3 {
+  margin-top: 20px;
+}
+footer .container .ThridColume p {
+  margin: 10px 0;
+}
+footer .container .ThridColume p a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+}
+footer .container .ThridColume p a:hover {
+  color: #f79925;
 }
 footer .container .ThridColume .socialLink {
   margin-top: 20px;
@@ -495,6 +777,10 @@ footer .container .ThridColume .socialLink a {
 footer .container .ThridColume .socialLink a i {
   font-size: 20px;
   color: black;
+  transition: color 0.3s ease;
+}
+footer .container .ThridColume .socialLink a i:hover {
+  color: #f79925;
 }
 footer .container .SecondColume::before,
 footer .container .ThridColume::before {

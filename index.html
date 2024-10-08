@@ -30,15 +30,19 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid wrap">
       <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.png" alt="" />
+        <img src="assets/images/logo.png" alt="logo" />
       </a>
+      <!-- Toggle button for mobile view -->
+      <button class="navbar-toggler" type="button"data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Industries</a>
+            <a class="nav-link active" href="#">Industries</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Integration</a>
+            <a class="nav-link active" href="#">Integration</a>
           </li>
           <li class="nav-item label_head">
             <a class="nav-link" href="#">
@@ -49,16 +53,27 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+            <a class="nav-link active" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#" id="openLoginModal" >Register / Login</a>
+            <a class="nav-link active" href="#" id="openLoginModal">Register / Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  
+  
   <!--navbar session end.-->
+
+  <!--Bubble Testingng-->
+  <div class="bubble-container">
+    <div class="bubble bubble1"></div>
+    <div class="bubble bubble2"></div>
+    <div class="bubble bubble3"></div>
+    <div class="bubble bubble4"></div>
+  </div>
+  <!--Bubble Testingng-->
 
   <!--modal pop up for register and login started here....-->
 
@@ -68,9 +83,9 @@
       <h2>Login</h2>
       <form action="#">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br>
+        <input type="email" id="email" name="email" required /><br />
         <label for="password">password:</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" required />
         <button type="submit">LogIn</button>
       </form>
     </div>
@@ -92,8 +107,9 @@
         feature. Maintain your inventory in dual units of measure. Ideal
         product for supply chain, FMCG etc.
       </p>
-      <form method="get">
-        <input type="email" />
+      <form method="get" class="homeserch">
+        <input type="email" placeholder="Email Address" />
+
         <button class="btn btn-warning btn-lg">Free Demo</button>
       </form>
     </div>
@@ -128,34 +144,39 @@
       </div>
       <!--Card Session started-->
       <div class="cards slider">
-        <div class="card">
+        <div class="card bg-info">
           <img src="assets/images/ChikenCard.png" alt="Dairy Industry" />
+          <hr />
           <div class="card-body">
-            <h4>Dairy Industry</h4>
+            <h4>Poultry Industry</h4>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-primary">
           <img src="assets/images/FishCard.png" alt="Seafood Industry" />
+          <hr />
           <div class="card-body">
             <h4>Seafood Industry</h4>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-success">
           <img src="assets/images/vegitableCard.webp" alt="Fruits Industry" />
+          <hr />
           <div class="card-body">
             <h4>Fruits Industry</h4>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-danger">
           <img src="assets/images/fabricCard.webp" alt="Fabric Industry" />
+          <hr />
           <div class="card-body">
             <h4>Fabric Industry</h4>
           </div>
         </div>
-        <div class="card">
+        <div class="card bg-secondary">
           <img src="assets/images/dairyCard.webp" alt="Poultry Industry" />
+          <hr />
           <div class="card-body">
-            <h4>Poultry Industry</h4>
+            <h4>Dairy Industry</h4>
           </div>
         </div>
       </div>
@@ -164,236 +185,237 @@
       <div class="buttonContainer">
         <button class="btn btn-lg btn-warning">More Industry</button>
       </div>
+    </div>
+  </section>
 
-      <!--Third Page Html Finish...................-->
-      <!--Choose Yout Industry section End..-->
+  <!--Third Page Html Finish...................-->
+  <!--Choose Yout Industry section End..-->
 
-      <!--Fourth Page sesstion started here.........-->
-      <!--What we do section start-->
-      <section class="WhatWeDo">
-        <div class="text">
-          <h2 class="Whatdoclass">What we Do</h2>
-          <p class="whatdopara">
-            We integrate the powerful Catchweight inventory feature on a
-            leading Odoo ERP which helps the customers to get the freedom to
-            manage their inventory and business operations based on both units
-            and weights at a time.The end user gets the advantages of 7
-            million user base ERP with Catchweight feature.
-          </p>
+  <!--Fourth Page sesstion started here.........-->
+  <!--What we do section start-->
+  <section class="WhatWeDo">
+    <div class="text">
+      <h2 class="Whatdoclass">What we Do</h2>
+      <p class="whatdopara">
+        We integrate the powerful Catchweight inventory feature on a leading
+        Odoo ERP which helps the customers to get the freedom to manage their
+        inventory and business operations based on both units and weights at a
+        time.The end user gets the advantages of 7 million user base ERP with
+        Catchweight feature.
+      </p>
+    </div>
+    <div class="carousel">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/images/carosalpic1.png" class="d-block custom-img" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/carosalpic2.png" class="d-block custom-img" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/dashboard3.png" class="d-block custom-img" alt="..." />
+          </div>
         </div>
-        <div class="carousel">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="assets/images/carosalpic1.png" class="d-block custom-img" alt="..." />
+      </div>
+    </div>
+    <!--Skip and Whatapp symbol section started..-->
+    <div class="skypeAndWhatsapp">
+      <div class="social_button">
+        <button class="skype_btn">
+          <a href="skype:technaureus?chat" target="_blank"><img src="assets/images/skype.png" class="border-right"
+              alt="skype" /></a>
+        </button>
+        <div class="line"></div>
+        <button class="whats_app_btn">
+          <a target="_blank"
+            href="https://api.whatsapp.com/send?phone=919567250335&text=Hi You Can Contact Using This Number">
+            <i class="fab fa-whatsapp"></i>
+            <p>Whatsapp</p>
+          </a>
+        </button>
+      </div>
+    </div>
+    <!--Whatsapp icon div ends here.........-->
+  </section>
+  <!--What we do section end-->
+
+  <!--What Our Client Think about us....-->
+
+  <section class="ClientThik">
+    <div class="container">
+      <h2 class="WhatOurCli">What our clients<br />think about us</h2>
+    </div>
+    <!--Cliet Carousel starrted hereee.......-->
+    <div class="client-carousel">
+      <div class="content">
+        <div class="image">
+          <div class="client-photo-wrapper">
+            <img src="assets/images/client1.png" class="d-block m-auto testi_client lazyload" alt="it" manager />
+            <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload" />
+          </div>
+        </div>
+        <p>
+          I experienced Technaureus as very forward-thinking, supporting and
+          friendly developers. They enhanced their already excellent
+          Catchweight module even more for us, to make it fit perfectly to our
+          needs.Together, we have set up a high-standard solution which we
+          want to use in various projects. Technaureus helped me out
+          immediately, whenever I faced an issue. I can clearly recommend
+          them! Thank you already for all your efforts!
+        </p>
+        <h4>IT Manager</h4>
+        <h6>Germany</h6>
+      </div>
+
+      <div class="content">
+        <div class="image">
+          <div class="client-photo-wrapper">
+            <img src="assets/images/client2.png" class="d-block m-auto testi_client lazyload" alt="ceo" />
+            <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload"
+              alt="testi_quote" />
+          </div>
+        </div>
+        <p>
+          This is my pleasure to work with team Technaureus. The team is well
+          experienced in Odoo ERP. I have worked with them with Odoo 12
+          Enterprise and Odoo Mobile App. I found them that they are very
+          professional and expertise in the domain. And the CatchW8 features
+          they developed helped me a lot in my business.
+        </p>
+        <h4>CEO</h4>
+        <h6>Italy</h6>
+      </div>
+
+      <div class="content">
+        <div class="image">
+          <div class="client-photo-wrapper">
+            <img src="assets/images/client3.png" class="d-block m-auto testi_client lazyload" alt="odoo" erp
+              consultant />
+            <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload"
+              alt="testi_quote" />
+          </div>
+        </div>
+        <p>
+          I recommend working with Technaureurs. The team is professional and
+          always responding to my requests &amp; feedback.They helped me with
+          the implementation of specific modules on Odoo V13 enterprise.
+          Everything is working fine.Thank you for the good work &amp; Keep it
+          UP !
+        </p>
+        <h4>Odoo ERP Consulatnt</h4>
+        <h6>France</h6>
+      </div>
+    </div>
+    <!--Cliet Carousil Ending here...............-->
+  </section>
+
+  <!--client logo start....-->
+
+  <section class="clientLogo">
+    <div class="container">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo1.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo2.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo3.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo4.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo5.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo6.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo7.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo8.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo9.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo10.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo11.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo12.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo13.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo14.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo15.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo16.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo17.png" alt="" class="client-carousel" />
+          </div>
+          <div class="swiper-slide">
+            <img src="assets/images/clientlogo18.png" alt="" class="client-carousel" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--client logo end....here-->
+  <!--Lets talk form started-->
+  <section class="letstalk ">
+    <div class="container ">
+      <div class="test">
+        <h3>Let's Talk</h3>
+        <h2>Speak With Our Expert!</h2>
+      </div>
+      <div class="form ">
+        <form action="" method="get">
+          <div class="row">
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingName" placeholder="Your Name" />
+                <label for="floatingName">Name</label>
               </div>
-              <div class="carousel-item">
-                <img src="assets/images/carosalpic2.png" class="d-block custom-img" alt="..." />
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
+                <label for="floatingInput">Email address</label>
               </div>
-              <div class="carousel-item">
-                <img src="assets/images/dashboard3.png" class="d-block custom-img" alt="..." />
+            </div>
+            <div class="col">
+              <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingMobile" placeholder="Your Mobile Number" />
+                <label for="floatingMobileNumber">mobile</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingProject"
+                  placeholder="Tell us more about your project" />
+                <label for="floatingProject">Tell us more about our project</label>
               </div>
             </div>
           </div>
-        </div>
-        <!--Skip and Whatapp symbol section started..-->
-        <div class="skypeAndWhatsapp">
-          <div class="social_button">
-            <button class="skype_btn">
-              <a href="skype:technaureus?chat" target="_blank"><img src="assets/images/skype.png" class="border-right"
-                  alt="skype" /></a>
-            </button>
-            <div class="line"></div>
-            <button class="whats_app_btn">
-              <a target="_blank"
-                href="https://api.whatsapp.com/send?phone=919567250335&text=Hi You Can Contact Using This Number">
-                <i class="fab fa-whatsapp"></i>
-                <p>Whatsapp</p>
-              </a>
-            </button>
-          </div>
-        </div>
-        <!--Whatsapp icon div ends here.........-->
-      </section>
-      <!--What we do section end-->
-
-      <!--What Out Client Think about us....-->
-
-      <section class="ClientThik">
-        <div class="container">
-          <h2 class="WhatOurCli">What our clients<br />think about us</h2>
-        </div>
-        <!--Cliet Carousel starrted hereee.......-->
-        <div class="client-carousel">
-          <div class="content">
-            <div class="image">
-              <div class="client-photo-wrapper">
-                <img src="assets/images/client1.png" class="d-block m-auto testi_client lazyload" alt="it" manager />
-                <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload" />
-              </div>
-            </div>
-            <p>
-              I experienced Technaureus as very forward-thinking, supporting
-              and friendly developers. They enhanced their already excellent
-              Catchweight module even more for us, to make it fit perfectly to
-              our needs.Together, we have set up a high-standard solution
-              which we want to use in various projects. Technaureus helped me
-              out immediately, whenever I faced an issue. I can clearly
-              recommend them! Thank you already for all your efforts!
-            </p>
-            <h4>IT Manager</h4>
-            <h6>Germany</h6>
-          </div>
-
-          <div class="content">
-            <div class="image">
-              <div class="client-photo-wrapper">
-                <img src="assets/images/client2.png" class="d-block m-auto testi_client lazyload" alt="ceo" />
-                <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload"
-                  alt="testi_quote" />
-              </div>
-            </div>
-            <p>
-              This is my pleasure to work with team Technaureus. The team is
-              well experienced in Odoo ERP. I have worked with them with Odoo
-              12 Enterprise and Odoo Mobile App. I found them that they are
-              very professional and expertise in the domain. And the CatchW8
-              features they developed helped me a lot in my business.
-            </p>
-            <h4>CEO</h4>
-            <h6>Italy</h6>
-          </div>
-
-          <div class="content">
-            <div class="image">
-              <div class="client-photo-wrapper">
-                <img src="assets/images/client3.png" class="d-block m-auto testi_client lazyload" alt="odoo" erp
-                  consultant />
-                <img src="assets/images/testimonial-client.png" class="d-block m-auto testi_quote lazyload"
-                  alt="testi_quote" />
-              </div>
-            </div>
-            <p>
-              I recommend working with Technaureurs. The team is professional
-              and always responding to my requests &amp; feedback.They helped
-              me with the implementation of specific modules on Odoo V13
-              enterprise. Everything is working fine.Thank you for the good
-              work &amp; Keep it UP !
-            </p>
-            <h4>Odoo ERP Consulatnt</h4>
-            <h6>France</h6>
-          </div>
-        </div>
-        <!--Cliet Carousil Ending here...............-->
-      </section>
-
-      <!--client logo start....-->
-
-      <section class="clientLogo">
-        <div class="container">
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo1.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo2.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo3.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo4.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo5.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo6.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo7.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo8.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo9.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo10.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo11.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo12.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo13.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo14.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo15.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo16.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo17.png" alt="" class="client-carousel" />
-              </div>
-              <div class="swiper-slide">
-                <img src="assets/images/clientlogo18.png" alt="" class="client-carousel" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!--client logo end....here-->
-
-      <!--Lets talk form started-->
-      <section class="letstalk">
-        <div class="container">
-          <div class="test">
-            <h3>Let's Talk</h3>
-            <h2>Speak With Our Expert!</h2>
-          </div>
-          <div class="form">
-            <form action="" method="get">
-              <div class="row">
-                <div class="col">
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name" />
-                    <label for="floatingName">Name</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" />
-                    <label for="floatingInput">Email address</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="floatingMobile" placeholder="Your Mobile Number" />
-                    <label for="floatingMobileNumber">mobile</label>
-                  </div>
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingProject"
-                      placeholder="Tell us more about your project" />
-                    <label for="floatingProject">Tell us more about our project</label>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="button mb-3 btn btn-lg btn-warning">
-            <button class="mb-3">sent requests</button>
-          </div>
-        </div>
-      </section>
-      <!--Lets Talk Sesction endinng here....-->
-      <hr>
+        </form>
+        <button class="sentRequstbtn">Sent Request</button>
+      </div>
+      
+    </div>
+    
+  </section>
+  <!--Lets Talk Sesction endinng here....-->
+  <hr />
 </body>
 <footer>
   <div class="container">
@@ -402,9 +424,9 @@
         <img src="assets/images/logo.png" alt="" />
       </div>
       <h5>
-        Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic
-        Zone, Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark,
-        Nellikode PO,Kozhikode, Kerala 673016
+        Technaureus Info Solutions Pvt. Ltd. KSITIL Special Economic Zone,
+        Unit No. 2E Second Floor, Sahya Building Govt. Cyberpark, Nellikode
+        PO,Kozhikode, Kerala 673016
       </h5>
       <h6 class="company">
         © Copyright 2022
@@ -413,7 +435,7 @@
     </div>
     <div class="col SecondColume">
       <h3>Our Industry</h3>
-      <div>
+      <div class="linklight">
         <p><a href="#">Dairy Industry</a></p>
         <p><a href="#">Poultry Industry</a></p>
         <p><a href="#">Seafood Industry</a></p>
@@ -447,13 +469,13 @@
     </div>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-</div>
-</section>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="assets/cat.js"></script>
-
 
 </html>

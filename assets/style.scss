@@ -29,6 +29,7 @@ body {
   background: #f4f7f9;
   font-family: "Poppins", sans-serif;
 }
+
 .navbar {
   color: #f79925;
   background: #f4f7f9;
@@ -37,8 +38,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 0;
+
   .wrap {
-    padding: 0 140px;
+    padding: 0 10%;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -56,38 +59,50 @@ body {
         width: 218px;
         vertical-align: middle;
         border-style: none;
+        max-width: 100%;
+        height: auto;
       }
     }
+
     .collapse {
       display: flex;
       flex-basis: auto;
       flex-grow: 1;
       align-items: flex-end;
       justify-content: flex-end;
+
       .navbar-nav {
         display: flex;
+        justify-content: space-around;
         flex-direction: row;
         padding-left: 0;
         margin-bottom: 0;
         list-style: none;
       }
+
       ul {
         margin-top: 0;
         li {
           padding: 0 18px;
           .nav-link {
-            padding-right: 0.5rem;
-            padding-left: 0.5rem;
+            // padding: 10px 15px;
+            line-height: 1.5;
+
+            .head_label {
+              margin-top: 0;
+            }
           }
         }
       }
     }
+
     a {
       background-color: transparent;
       text-decoration: none;
     }
   }
 }
+
 .fixed-top {
   position: fixed;
   top: 0;
@@ -95,6 +110,119 @@ body {
   left: 0;
   z-index: 1030;
 }
+
+@media (max-width: 992px) {
+  .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse {
+    flex-grow: 1;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center; /* Center align items */
+  }
+
+  .wrap {
+    padding: 0 20px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .wrap {
+    padding: 0 10px; /* Further reduce padding */
+  }
+
+  .navbar-brand img {
+    width: 150px; /* Reduce logo size on small screens */
+  }
+}
+
+//bubble styleing
+
+.bubble-container {
+  position: fixed; /* Fixed position to stay in the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Send the bubbles behind the content */
+  overflow: hidden;
+  background-color: transparent;
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    background-color: rgba(
+      173,
+      216,
+      230,
+      0.7
+    ); /* Light blue translucent color */
+    border-radius: 50%;
+    animation: floatUp 10s infinite ease-in-out,
+      resizeBubble 6s infinite ease-in-out;
+    opacity: 0.8;
+  }
+  .bubble1 {
+    width: 100px;
+    height: 100px;
+    left: 20%;
+    animation-delay: 1s;
+  }
+  .bubble2 {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-delay: 2s;
+  }
+  .bubble3 {
+    width: 120px;
+    height: 120px;
+    left: 70%;
+    animation-delay: 3s;
+  }
+  .bubble4 {
+    width: 90px;
+    height: 90px;
+    left: 40%;
+    animation-delay: 4s;
+  }
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-300px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+}
+
+/* Bubble Resizing Animation */
+@keyframes resizeBubble {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+//bubble styling
+
 //modal styling started here........
 .modal {
   display: none;
@@ -115,7 +243,7 @@ body {
     position: relative;
     text-align: center;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    
+
     form {
       display: flex;
       flex-direction: column;
@@ -140,13 +268,19 @@ body {
         cursor: pointer;
       }
     }
-    .close {  
+    .close {
       position: absolute;
       top: 10px;
       right: 15px;
       font-size: 20px;
       cursor: pointer;
     }
+  }
+}
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%; // Slightly wider on smaller screens
+    margin: 20% auto; // Adjust vertical centering
   }
 }
 //modal section ending here..........
@@ -156,6 +290,7 @@ body {
 .banner {
   position: relative;
   margin-top: 100px;
+  margin-bottom: 100px; 
   .BannerContainer {
     min-height: 77vh;
     padding: 20px;
@@ -163,6 +298,7 @@ body {
     margin-top: 230px;
     margin-left: 100px;
     margin-right: 100px;
+
     h1 {
       text-align: center;
       font-size: 87px;
@@ -171,27 +307,98 @@ body {
       span {
         color: #f89924;
       }
+
+      // Make heading responsive
+      @media (max-width: 768px) {
+        font-size: 60px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 40px;
+      }
     }
+
     p {
       text-align: center;
       font-weight: 400;
       margin-top: 22px;
       font-size: 1.1rem;
       line-height: 1.7;
+
+      // Responsive paragraph text
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 0.9rem;
+      }
     }
+
     form {
       margin-top: 25px;
       text-align: center;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
       input {
-        padding: 20px;
-        padding-right: 300px;
-        border-radius: 15px;
+        padding: 15px;
+        width: 100%;
+        max-width: 400px; // Set a max-width for responsiveness
+        border-radius: 15px 0 0 15px;
         border: 1px solid #ccc;
+        box-shadow: 5px 12px 15px -8px #00000038;
+        font-size: 1rem;
+
+        // Responsive input field
+        @media (max-width: 768px) {
+          padding-right: 150px;
+        }
+
+        @media (max-width: 480px) {
+          padding-right: 30px;
+          border-radius: 15px; // Full rounded border for mobile
+          margin-bottom: 10px;
+        }
       }
+
       button {
-        border-radius: 25px;
-        padding: 20px 30px;
+        background-color: #f89924;
+        padding: 15px 30px;
+        color: white;
+        border: none;
+        border-radius: 0 15px 15px 0;
+        box-shadow: 5px 12px 15px -8px #00000038;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        // Button styling for smaller screens
+        @media (max-width: 480px) {
+          border-radius: 15px; // Full rounded border for mobile
+          width: 100%;
+          margin-left: 0;
+        }
+
+        &:hover {
+          background-color: #f79925;
+        }
       }
+    }
+  }
+
+  // Adjust container margins for smaller screens
+  @media (max-width: 768px) {
+    .BannerContainer {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .BannerContainer {
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 }
@@ -219,29 +426,91 @@ body {
         max-width: 100%;
         height: auto;
         object-fit: cover;
+        //final adding for responsive images vi1
+        max-width: 100%;
+        height: auto;
       }
       .VideoPlayButton {
         background-color: red;
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         position: absolute;
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
         border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        animation: pulse 2s infinite;
+      }
+      .VideoPlayButton::before {
+        content: "";
+        width: 21px;
+        height: 26px;
+        border-left: 18px solid white;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        position: relative;
+        left: 5px; /* Adjust to center the triangle inside the circle */
+      }
+      @keyframes pulse {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
       }
     }
   }
 }
 //Second Page Style End...
 //Third Page Styling Started.......
+//running cards also
 .ChooseYourIndustry {
+  padding-top: 100px; 
   width: 100%;
+  padding: 0;
   .container {
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
     .cards {
+      display: flex;
+      justify-content: space-between; /* To make sure the cards distribute evenly */
+      overflow: hidden;
+      gap: 50px;
       .card {
+        flex: 1 1 auto; /* Make sure the cards scale with the container */
+        // margin-right: 10px;
+        padding: 15px; /* Add padding inside the cards */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for layered effect */
+        position: relative;
         img {
-          background-color: aqua;
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px 10px 0 0;
+        }
+        .card-body{
+          text-align: center;
+          color: white;
+          padding: 10px 0;
+        }
+        hr{
+          width: 50%; /* Make the hr thinner */
+          height: 3px; /* Set thickness of the hr */
+          background-color: white; /* Set color of hr */
+          border: none; /* Remove default border */
+          margin: 10px auto;
         }
       }
     }
@@ -259,8 +528,13 @@ body {
   .buttonContainer {
     align-items: center;
     text-align: center;
+    
     .btn {
       border-radius: 25px;
+      padding: 15px 30px;
+      font-size: 18px;
+      width: auto;
+      color: white;
     }
   }
 }
@@ -296,6 +570,9 @@ body {
             height: auto; /* Maintain the aspect ratio */
             margin: 0 auto; /* Center the images */
             border-radius: 25px;
+            //final adding for responsive images vi1
+            max-width: 100%;
+            height: auto;
           }
         }
       }
@@ -332,6 +609,9 @@ body {
         img {
           width: 100%;
           height: 100%;
+          //final adding for responsive images vi1
+          max-width: 100%;
+          height: auto;
         }
       }
       .whats_app_btn {
@@ -383,8 +663,8 @@ body {
       box-sizing: border-box;
       .client-photo-wrapper {
         position: relative;
-        width: 120px;
-        height: 120px;
+        width: 300px;
+        height: 300px;
         margin: 0 auto;
         .testi_client {
           width: 100%;
@@ -398,24 +678,26 @@ body {
           position: absolute;
           bottom: 0;
           right: 0;
-          width: 30px;
-          height: 30px;
+          width: 90px;
+          height: 90px;
         }
       }
       p {
-        font-size: 16px;
+        margin: 50px;
+        font-size: 19px;
         line-height: 1.6;
       }
 
       h4 {
         margin-top: 10px;
-        font-size: 18px;
+        font-size: 25px;
         font-weight: bold;
       }
 
       h6 {
-        font-size: 14px;
+        font-size: 18px;
         color: #555;
+        margin-bottom: 50px;
       }
     }
   }
@@ -438,6 +720,9 @@ body {
           text-align: center;
           img {
             max-width: 100px;
+            //final adding for responsive images vi1
+            max-width: 100%;
+            height: auto;
           }
         }
       }
@@ -446,6 +731,9 @@ body {
 }
 
 .letstalk {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   .container {
     text-align: center;
@@ -465,16 +753,13 @@ body {
     }
     .form {
       padding: 20px;
-
       .row {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
         width: 100%;
         .col {
           width: 100%;
           padding: 10px;
-          @media (min-width: 68px) {
+          @media (min-width: 768px) {
             width: 48%;
           }
           .form-floating {
@@ -484,22 +769,22 @@ body {
               width: 20%;
               padding: 15px;
               font-size: 1rem;
+              color: #fff;
+              background-color: #333;
             }
           }
         }
       }
     }
-    .button {
-      margin-top: 2rem;
-      text-align: center;
+    button{
+      background-color: #f79925;
       padding: 15px 30px;
-      font-size: 1.2rem;
-      font-family: "Poppins", sans-serif;
-      background-color: #f79925; // Custom button color
-      color: #fff; // Text color
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      font-size: 1.2rem; 
+      font-family: "Poppins", sans-serif; 
+      color: #fff; 
+      border: none; 
+      border-radius:25px; 
+      cursor: pointer; 
     }
   }
 }
@@ -526,29 +811,85 @@ footer {
         img {
           width: 218px;
           height: 50px;
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 18px;
         }
       }
+
+      h5 {
+        font-size: 1rem;
+        line-height: 2;
+        color: rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+      }
+
+      h6 {
+        color: rgba(0, 0, 0, 0.5);
+      }
     }
+
     .SecondColume {
       h3 {
         margin-top: 20px;
       }
-      p {
-        margin: 10px 0;
-      }
-    }
-    .ThridColume {
-      .socialLink {
-        margin-top: 20px;
-        a {
-          margin-right: 10px;
-          i {
-            font-size: 20px;
-            color: black;
+
+      .linklight {
+        p {
+          margin: 10px 0;
+
+          // Removing underline and styling links
+          a {
+            text-decoration: none; // Remove underline
+            color: rgba(0, 0, 0, 0.5); // Lighter black text
+            transition: color 0.3s ease; // Smooth color transition on hover
+
+            &:hover {
+              color: #f79925; // Change link color on hover (custom color)
+            }
           }
         }
       }
     }
+
+    .ThridColume {
+      h3 {
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 10px 0;
+
+        a {
+          text-decoration: none; // Remove underline
+          color: rgba(0, 0, 0, 0.5); // Lighter black text
+          transition: color 0.3s ease; // Smooth color transition on hover
+
+          &:hover {
+            color: #f79925; // Change link color on hover
+          }
+        }
+      }
+
+      .socialLink {
+        margin-top: 20px;
+
+        a {
+          margin-right: 10px;
+
+          i {
+            font-size: 20px;
+            color: black;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #f79925; // Change icon color on hover
+            }
+          }
+        }
+      }
+    }
+
     .SecondColume::before,
     .ThridColume::before {
       content: "";
