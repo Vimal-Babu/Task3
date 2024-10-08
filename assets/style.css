@@ -1,0 +1,510 @@
+/* Font Face Declarations */
+@font-face {
+  font-family: "Poppins", sans-serif;
+  src: url(Poppins-Thin.woff2) format("woff2"), url(Poppins-Thin.woff) format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url(Gilroy-Light.woff2) format("woff2"), url(Gilroy-Light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f4f7f9;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  color: #f79925;
+  background: #f4f7f9;
+  padding: 31px 0;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .wrap {
+  padding: 0 140px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navbar .wrap .navbar-brand {
+  display: inline;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: inherit;
+  white-space: nowrap;
+}
+.navbar .wrap .navbar-brand img {
+  width: 218px;
+  vertical-align: middle;
+  border-style: none;
+}
+.navbar .wrap .collapse {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.navbar .wrap .collapse .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navbar .wrap .collapse ul {
+  margin-top: 0;
+}
+.navbar .wrap .collapse ul li {
+  padding: 0 18px;
+}
+.navbar .wrap .collapse ul li .nav-link {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.navbar .wrap a {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  height: 50vh;
+  position: relative;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.modal .modal-content form {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+.modal .modal-content form label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.modal .modal-content form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 16px;
+}
+.modal .modal-content form button {
+  padding: 10px;
+  background-color: #f79925;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.modal .modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.banner {
+  position: relative;
+  margin-top: 100px;
+}
+.banner .BannerContainer {
+  min-height: 77vh;
+  padding: 20px;
+  padding-top: 0px;
+  margin-top: 230px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.banner .BannerContainer h1 {
+  text-align: center;
+  font-size: 87px;
+  font-weight: 700;
+  font-family: "Gilroy", sans-serif;
+}
+.banner .BannerContainer h1 span {
+  color: #f89924;
+}
+.banner .BannerContainer p {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 22px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.banner .BannerContainer form {
+  margin-top: 25px;
+  text-align: center;
+}
+.banner .BannerContainer form input {
+  padding: 20px;
+  padding-right: 300px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+.banner .BannerContainer form button {
+  border-radius: 25px;
+  padding: 20px 30px;
+}
+
+.secondPage {
+  position: relative;
+  bottom: 100px;
+}
+.secondPage .catchweight {
+  text-align: center;
+}
+.secondPage .catchweight .TextContainer span {
+  color: #f89924;
+}
+.secondPage .catchweight .TextContainer h2 {
+  font-weight: 800;
+  font-size: 46px;
+}
+.secondPage .graphsYoutube .container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.secondPage .graphsYoutube .container .VideoPlayButton {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.ChooseYourIndustry {
+  width: 100%;
+}
+.ChooseYourIndustry .container {
+  margin-left: 0;
+}
+.ChooseYourIndustry .container .cards .card img {
+  background-color: aqua;
+}
+.ChooseYourIndustry .container .textContainer {
+  margin-right: 0;
+}
+.ChooseYourIndustry .container .textContainer h2 {
+  text-align: left;
+  font-size: 55px;
+  font-weight: 700;
+  font-family: "Gilroy", sans-serif;
+}
+.ChooseYourIndustry .buttonContainer {
+  align-items: center;
+  text-align: center;
+}
+.ChooseYourIndustry .buttonContainer .btn {
+  border-radius: 25px;
+}
+
+.WhatWeDo {
+  margin-top: 100px;
+}
+.WhatWeDo .text {
+  text-align: center;
+  align-items: center;
+}
+.WhatWeDo .text .Whatdoclass {
+  font-size: 55px;
+  font-weight: 700;
+  font-family: "Gilroy", sans-serif;
+}
+.WhatWeDo .text .whatdopara {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  font-family: "Poppins", sans-serif;
+  margin-left: 127px;
+  margin-right: 180px;
+}
+.WhatWeDo .carousel .carousel .carousel-inner .carousel-item img {
+  width: 80%; /* Adjust the width to make the image smaller */
+  height: auto; /* Maintain the aspect ratio */
+  margin: 0 auto; /* Center the images */
+  border-radius: 25px;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button button:hover {
+  background-color: #e0e0e0;
+  border-color: #ccc;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button button a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button .skype_btn img {
+  width: 100%;
+  height: 100%;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button .whats_app_btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 50px;
+  border-radius: 50px;
+  background-color: #25d366;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button i {
+  font-size: 24px;
+  color: #fff;
+  margin-right: 10px;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+}
+.WhatWeDo .skypeAndWhatsapp .social_button .line {
+  height: 100px;
+  width: 2px;
+  background-color: #ddd;
+}
+
+.ClientThik {
+  margin-top: 50px;
+}
+.ClientThik .container {
+  text-align: center;
+}
+.ClientThik .container .WhatOurCli {
+  font-size: 55px;
+  font-weight: 700;
+  font-family: "Gilroy", sans-serif;
+}
+.ClientThik .client-carousel {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.ClientThik .client-carousel .content {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.ClientThik .client-carousel .content .client-photo-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+.ClientThik .client-carousel .content .client-photo-wrapper .testi_client {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+.ClientThik .client-carousel .content .client-photo-wrapper .testi_quote {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+}
+.ClientThik .client-carousel .content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.ClientThik .client-carousel .content h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.ClientThik .client-carousel .content h6 {
+  font-size: 14px;
+  color: #555;
+}
+
+.clientLogo {
+  padding: 20px 0;
+}
+.clientLogo .container {
+  max-width: 100%;
+}
+.clientLogo .container .swiper-container {
+  width: 100%;
+  overflow: hidden;
+}
+.clientLogo .container .swiper-container .swiper-wrapper {
+  display: flex;
+}
+.clientLogo .container .swiper-container .swiper-wrapper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+}
+.clientLogo .container .swiper-container .swiper-wrapper .swiper-slide img {
+  max-width: 100px;
+}
+
+.letstalk {
+  min-height: 100vh;
+}
+.letstalk .container {
+  text-align: center;
+}
+.letstalk .container .test h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+}
+.letstalk .container .test h2 {
+  font-size: 55px;
+  font-weight: 700;
+  font-family: "Gilroy", sans-serif;
+}
+.letstalk .container .form {
+  padding: 20px;
+}
+.letstalk .container .form .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.letstalk .container .form .row .col {
+  width: 100%;
+  padding: 10px;
+}
+@media (min-width: 68px) {
+  .letstalk .container .form .row .col {
+    width: 48%;
+  }
+}
+.letstalk .container .form .row .col .form-floating {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.letstalk .container .form .row .col .form-floating .input {
+  width: 20%;
+  padding: 15px;
+  font-size: 1rem;
+}
+.letstalk .container .button {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #f79925;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 20px 0;
+}
+footer .container .col {
+  width: 30%;
+  padding: 0 20px;
+  position: relative;
+}
+footer .container .firstColume {
+  text-align: center;
+  width: 30%;
+}
+footer .container .firstColume .logoImage img {
+  width: 218px;
+  height: 50px;
+}
+footer .container .SecondColume h3 {
+  margin-top: 20px;
+}
+footer .container .SecondColume p {
+  margin: 10px 0;
+}
+footer .container .ThridColume .socialLink {
+  margin-top: 20px;
+}
+footer .container .ThridColume .socialLink a {
+  margin-right: 10px;
+}
+footer .container .ThridColume .socialLink a i {
+  font-size: 20px;
+  color: black;
+}
+footer .container .SecondColume::before,
+footer .container .ThridColume::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background-color: black;
+}
+
+/*# sourceMappingURL=style.css.map */
